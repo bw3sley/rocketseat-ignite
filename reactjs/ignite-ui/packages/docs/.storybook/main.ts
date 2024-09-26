@@ -31,6 +31,15 @@ const config: StorybookConfig = {
 
   typescript: {
     reactDocgen: "react-docgen-typescript"
+  },
+
+  viteFinal: (config, { configType }) => {
+    if (configType === "PRODUCTION") {
+      config.base = "/rocketseat-ignite/reactjs/ignite-ui/"
+    }
+
+    return config
   }
 };
+
 export default config;
